@@ -2,12 +2,13 @@
 #include "Stats.h"
 #include "Ability.h"
 #include "Fireball.h"
+#include <vector>
 
 class Player 
 {
 public:
 	FStats Stats;
-
+	FAbility* SelectedAbility; //The ability currently selected for editing/access
 
 	Player();
 
@@ -18,13 +19,15 @@ public:
 	void SetHealth(int health);
 	int GetHealth();
 
-	std::string GetAbilityName(int index);
+	std::string GetAbilityName(int index); //Better way to access Ability funcitons?
 
+	void SetSelectedAbility(int index); //Set the ability you want to access as selected
 
 private:
 	int Health;
-	FAbility** Abilities = new FAbility*[2];
+	//FAbility** Abilities = new FAbility*[2]; //Define array of pointers
 
-protected:
-	
+	std::vector<FAbility*> Abilities; //Vector of pointers
+
+protected:	
 };

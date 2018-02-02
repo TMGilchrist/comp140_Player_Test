@@ -8,8 +8,10 @@ Player::Player()
 	//Create new array to store ability subclasses in. Add new fireball to the array. 
 	//Not 100% sure how this works...
 
-	//FAbility** Abilities = new FAbility*[2];
-	Abilities[0] = new FFireball;
+	//Abilities[0] = new FFireball;
+
+	//Or use std::vector?
+	Abilities.push_back(new FFireball);
 	
 	Health = 1;
 }
@@ -22,7 +24,19 @@ Player::Player(int health, int strength, int dexterity, int wisdom, int charisma
 
 Player::~Player()
 {
+	//std::vector<FAbility*>::iterator iter = Abilities.begin(); is the same as the following
 
+	//deleting pointers in vector/collection
+	auto iter = Abilities.begin();
+	while (iter != Abilities.end())
+	{
+		if ((*iter))
+		{
+			delete (*iter);
+			iter = Abilities.erase(iter);
+		}
+	}
+	Abilities.clear();
 }
 
 void Player::SetHealth(int health)
@@ -38,4 +52,9 @@ int Player::GetHealth()
 std::string Player::GetAbilityName(int index)
 {
 	return Abilities[index]->GetName();
+}
+
+void Player::SetSelectedAbility(int index)
+{
+	SelectedAbility = Abilities[index];
 }

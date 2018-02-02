@@ -20,7 +20,10 @@ int main()
 	Player2->Stats.SetCharisma(5);
 	std::cout << "\n" << Player2->Stats.GetCharisma();
 
-	std::cout << "\n" << Player2->GetAbilityName(0);
+	//std::cout << "\n" << Player2->GetAbilityName(0);
+
+	Player2->SetSelectedAbility(0);
+	std::cout << "\n" << Player2->SelectedAbility->GetName();
 
 	if (Player2)
 	{
@@ -32,6 +35,7 @@ int main()
 	std::cout << "\nPress any key to exit.";
 	//std::cin.ignore();
 	std::cin.get();
+
     return 0;
 }
 
