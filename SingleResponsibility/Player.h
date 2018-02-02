@@ -4,22 +4,21 @@
 class Player 
 {
 public:
+	FStats Stats;
 
 	Player();
 
-	//Initialise player with Health, Strength, Dexterity, Wisdom, Charisma
-	Player(int, int, int, int, int);
+	//Initialise player with custom values
+	Player(int health, int strength, int dexterity, int wisdom, int charisma);
 	~Player();
 
-	void SetHealth(int );
+	void SetHealth(int health);
 	int GetHealth();
 
 
 private:
 	int Health;
-	FStats Stats;
-
-	//stats
+	//FStats Stats;
 	//abilities
 
 protected:

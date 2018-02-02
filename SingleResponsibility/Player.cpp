@@ -4,6 +4,7 @@
 Player::Player() 
 {
 	FStats* Stats = new FStats();
+	Health = 1;
 }
 
 Player::Player(int health, int strength, int dexterity, int wisdom, int charisma)
