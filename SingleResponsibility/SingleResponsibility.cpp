@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "Player.h"
 #include <iostream>
+#include "string" // ?
 
 //Make a cool d&d style character class. 
 //
@@ -17,7 +18,9 @@ int main()
 	Player2->GetHealth();
 
 	Player2->Stats.SetCharisma(5);
-	std::cout << Player2->Stats.GetCharisma();
+	std::cout << "\n" << Player2->Stats.GetCharisma();
+
+	std::cout << "\n" << Player2->GetAbilityName(0);
 
 	if (Player2)
 	{

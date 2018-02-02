@@ -1,4 +1,9 @@
+#include "stdafx.h"
 #include "Ability.h"
+
+FAbility::FAbility()
+{
+}
 
 FAbility::~FAbility()
 {
@@ -12,6 +17,16 @@ void FAbility::SetCooldown(int cooldown)
 int FAbility::GetCooldown()
 {
 	return Cooldown;
+}
+
+void FAbility::SetName(std::string name)
+{
+	Name = name;
+}
+
+std::string FAbility::GetName()
+{
+	return Name;
 }
 
 void FAbility::SetResourceType(std::string resourceType)

@@ -4,6 +4,13 @@
 Player::Player() 
 {
 	FStats* Stats = new FStats();
+
+	//Create new array to store ability subclasses in. Add new fireball to the array. 
+	//Not 100% sure how this works...
+
+	//FAbility** Abilities = new FAbility*[2];
+	Abilities[0] = new FFireball;
+	
 	Health = 1;
 }
 
@@ -26,4 +33,9 @@ void Player::SetHealth(int health)
 int Player::GetHealth()
 {
 	return Health;
-};
+}
+
+std::string Player::GetAbilityName(int index)
+{
+	return Abilities[index]->GetName();
+}

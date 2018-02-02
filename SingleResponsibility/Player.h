@@ -1,10 +1,13 @@
 #pragma once
-#include"Stats.h"
+#include "Stats.h"
+#include "Ability.h"
+#include "Fireball.h"
 
 class Player 
 {
 public:
 	FStats Stats;
+
 
 	Player();
 
@@ -15,11 +18,12 @@ public:
 	void SetHealth(int health);
 	int GetHealth();
 
+	std::string GetAbilityName(int index);
+
 
 private:
 	int Health;
-	//FStats Stats;
-	//abilities
+	FAbility** Abilities = new FAbility*[2];
 
 protected:
 	
